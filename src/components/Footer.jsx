@@ -11,6 +11,7 @@ const Footer = () => {
           <a href="#" aria-label="Twitter">Twitter</a>
           <a href="#" aria-label="Instagram">Instagram</a>
         </div>
+        <p> Elaborado por LoopDev | Jose Fermin Espinosa</p>
       </div>
     </footer>
   );
