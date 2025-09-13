@@ -44,16 +44,37 @@ Esta es una **landing page profesional** desarrollada en **React**, diseñada es
 
 ---
 
-## Autor
+## 📜 Licencia
 
-**LoopDev - Jose Fermin Espinosa**
-Plantilla base para múltiples proyectos de landing page profesionales.
+Este proyecto está bajo la licencia MIT — libre para uso personal, comercial, educativo o empresarial.
+Incluye crédito al autor original.
+
+© 2025 LoopDev - José Fermín Espinosa Rodríguez
+Una solución de software desarrollada por LoopDev.
 
 ---
 
-## Licencia
+## 💬 Cómo Contribuir
 
-Este proyecto es de uso propio y puede ser adaptado para fines educativos o portafolio.
+1. Haz un fork del repositorio.
+2. Crea tu rama (`feat/add-docker`).
+3. Realiza tus cambios.
+4. Envía un Pull Request.
+
+Ideas de contribución:
+
+* Soporte para cédulas de ciudadanía
+* Exportación CSV/Excel
+* Dockerfile para despliegue fácil
+* UI moderna con React/Vue
+
+---
+
+## 🤝 Soporte y Contacto
+
+¿Problemas? ¿Sugerencias?
+📩 Contáctame: [loopdev.co@gmail.com](mailto:loopde.co@gmail.com)
+🔗 GitHub Profile: [LoopDev](https://github.com/loopdevco)
 
 ```
 ```
