@@ -1,0 +1,538 @@
+/* Variables globales */
+:root {
+  /* Colores principales - Paleta profesional para firma legal y contable */
+  --primary-navy: #2c3e50;
+  --primary-slate: #34495e;
+  --primary-steel: #5a6c7d;
+  --accent-blue: #4a90e2;
+  --accent-light: #64b5f6;
+  
+  /* Colores secundarios */
+  --text-primary: #2c3e50;
+  --text-secondary: #5a6c7d;
+  --text-muted: #718096;
+  --background-primary: #ffffff;
+  --background-secondary: #f8f9fa;
+  --background-tertiary: #e8eef5;
+  
+  /* Gradientes elegantes y profesionales */
+  --gradient-primary: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  --gradient-accent: linear-gradient(135deg, #4a90e2 0%, #64b5f6 100%);
+  --gradient-subtle: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  --gradient-hero: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  
+  /* Sombras profesionales */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12);
+  --shadow-premium: 0 25px 50px rgba(0, 0, 0, 0.15);
+  --shadow-blue: 0 8px 25px rgba(74, 144, 226, 0.2);
+  
+  /* Tipografía profesional */
+  --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-secondary: 'Georgia', 'Times New Roman', serif;
+  --font-mono: 'Consolas', 'Monaco', 'Courier New', monospace;
+  
+  /* Espaciado consistente */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 5rem;
+  
+  /* Bordes elegantes */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-card: 12px;
+  --radius-premium: 16px;
+  
+  /* Transiciones suaves */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-premium: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset profesional */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+  overflow-x: hidden;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+/* Enlaces profesionales */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-normal);
+}
+
+a:hover {
+  color: var(--accent-blue);
+}
+
+/* Contenedores responsivos */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+  position: relative;
+}
+
+.container-narrow {
+  max-width: 800px;
+}
+
+.container-wide {
+  max-width: 1400px;
+}
+
+/* Secciones elegantes */
+.section {
+  position: relative;
+  padding: var(--space-4xl) 0;
+  isolation: isolate;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  z-index: -1;
+}
+
+.section-premium {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.section-elegant {
+  background: var(--gradient-subtle);
+}
+
+.section-hero {
+  background: var(--gradient-hero);
+  min-height: 90vh;
+  padding: 6rem 0 4rem;
+}
+
+/* Títulos profesionales */
+.section-title {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+  position: relative;
+}
+
+.section-title h1,
+.section-title h2 {
+  font-family: var(--font-secondary);
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--primary-navy);
+  margin-bottom: var(--space-md);
+  line-height: 1.2;
+}
+
+.section-premium .section-title h1,
+.section-premium .section-title h2 {
+  color: white;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.section-premium .section-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Decorador elegante para títulos */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
+
+.section-title.no-decorator::after {
+  display: none;
+}
+
+/* Sistema de botones profesional */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  min-width: 140px;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Variantes de botones */
+.btn-primary {
+  background: var(--accent-blue);
+  color: white;
+  box-shadow: var(--shadow-blue);
+}
+
+.btn-primary:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary-navy);
+  color: var(--primary-navy);
+}
+
+.btn-outline:hover {
+  background: var(--primary-navy);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-ghost {
+  background: rgba(74, 144, 226, 0.05);
+  color: var(--primary-navy);
+  border: 1px solid rgba(74, 144, 226, 0.1);
+}
+
+.btn-ghost:hover {
+  background: rgba(74, 144, 226, 0.1);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Tamaños de botones */
+.btn-sm {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: 0.8rem;
+  min-width: 100px;
+}
+
+.btn-lg {
+  padding: var(--space-lg) var(--space-2xl);
+  font-size: 0.9rem;
+  min-width: 180px;
+}
+
+/* Animaciones profesionales */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all var(--transition-slow);
+  will-change: opacity, transform;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all var(--transition-slow);
+}
+
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all var(--transition-slow);
+}
+
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all var(--transition-slow);
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Elementos decorativos profesionales */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-lg);
+}
+
+.premium-card {
+  background: white;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--background-tertiary);
+  transition: all var(--transition-premium);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-premium);
+}
+
+.professional-card {
+  background: white;
+  border-radius: var(--radius-premium);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(74, 144, 226, 0.1);
+  transition: all var(--transition-premium);
+}
+
+.professional-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-premium);
+  background: linear-gradient(135deg, #ffffff 0%, #fafbfd 100%);
+}
+
+/* Grid system profesional */
+.grid {
+  display: grid;
+  gap: var(--space-xl);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Utilidades profesionales */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.flex { display: flex; }
+.flex-center { display: flex; justify-content: center; align-items: center; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.flex-column { flex-direction: column; }
+
+/* Utilidades de espaciado */
+.mb-0 { margin-bottom: 0; }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+.mb-2xl { margin-bottom: var(--space-2xl); }
+
+.mt-0 { margin-top: 0; }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mt-2xl { margin-top: var(--space-2xl); }
+
+/* Responsive design profesional */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .section-hero {
+    min-height: 80vh;
+    padding: 4rem 0 3rem;
+  }
+  
+  .container {
+    padding: 0 var(--space-lg);
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .grid {
+    gap: var(--space-lg);
+  }
+  
+  .section-title h1,
+  .section-title h2 {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+  
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-4xl: 3rem;
+  }
+  
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .section-hero {
+    padding: 3rem 0 2rem;
+  }
+  
+  .container {
+    padding: 0 var(--space-md);
+  }
+  
+  .btn-lg {
+    padding: var(--space-md) var(--space-xl);
+    font-size: 0.85rem;
+  }
+  
+  .section-title h1,
+  .section-title h2 {
+    font-size: clamp(1.75rem, 6vw, 2rem);
+  }
+}
+
+/* Estados focus para accesibilidad */
+.btn:focus,
+a:focus {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* Animaciones de entrada escalonadas */
+.stagger-animation > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: staggerFadeIn 0.6s ease forwards;
+}
+
+.stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes staggerFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accesibilidad mejorada */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Elementos decorativos para secciones */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(74, 144, 226, 0.2) 50%, 
+    transparent 100%
+  );
+  margin: var(--space-4xl) 0;
+}

@@ -1,0 +1,327 @@
+.team {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+}
+
+.team::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(74, 144, 226, 0.2) 50%, 
+    transparent 100%
+  );
+}
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 4rem 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  letter-spacing: -0.3px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #4a90e2 0%, #5dade2 100%);
+  border-radius: 2px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.team-member {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(74, 144, 226, 0.1);
+  overflow: hidden;
+}
+
+.team-member::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4a90e2 0%, #5dade2 100%);
+  transition: width 0.4s ease;
+  border-radius: 0 0 2px 2px;
+}
+
+.team-member:hover::before {
+  width: 60%;
+}
+
+.team-member:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #fafbfd 100%);
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 0 1.5rem 0;
+  transition: all 0.3s ease;
+  border: 4px solid #f8f9fa;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.team-member:hover img {
+  transform: scale(1.05);
+  border-color: rgba(74, 144, 226, 0.2);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.team-member h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: -0.2px;
+  transition: color 0.3s ease;
+}
+
+.team-member:hover h3 {
+  color: #4a90e2;
+}
+
+.team-member .role {
+  color: #5a6c7d;
+  font-size: 0.95rem;
+  margin: 0;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+}
+
+/* Animaciones con IntersectionObserver */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay escalonado para cada miembro */
+.fade-in:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.fade-in:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.fade-in:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.fade-in:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+/* Elemento decorativo sutil */
+.team::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(74, 144, 226, 0.15) 50%, 
+    transparent 100%
+  );
+}
+
+/* Estados focus para accesibilidad */
+.team-member:focus-within {
+  outline: 2px solid #4a90e2;
+  outline-offset: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team {
+    padding: 4rem 0;
+  }
+  
+  .section {
+    padding: 0 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .team-member {
+    padding: 2rem 1.5rem;
+  }
+  
+  .team-member img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1.25rem;
+  }
+  
+  .team-member h3 {
+    font-size: 1.2rem;
+  }
+  
+  .team-member .role {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team {
+    padding: 3rem 0;
+  }
+  
+  .section {
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .team-member {
+    padding: 2rem 1.25rem;
+  }
+  
+  .team-member img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 1rem;
+  }
+  
+  .team-member h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .team-member .role {
+    font-size: 0.85rem;
+  }
+}
+
+/* Grid responsivo mejorado */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mejoras de performance */
+.team-member {
+  will-change: transform;
+}
+
+.team-member img {
+  will-change: transform;
+}
+
+.fade-in {
+  will-change: transform, opacity;
+}
+
+/* Variante para dispositivos con hover */
+@media (hover: hover) {
+  .team-member:hover {
+    cursor: default;
+  }
+}
+
+/* Accesibilidad mejorada */
+@media (prefers-reduced-motion: reduce) {
+  .team-member,
+  .team-member img,
+  .team-member h3,
+  .fade-in {
+    transition: none;
+  }
+  
+  .team-member:hover {
+    transform: none;
+  }
+  
+  .team-member:hover img {
+    transform: none;
+  }
+}
+
+/* Efecto sutil en las imágenes para profesionalismo */
+.team-member img {
+  filter: grayscale(20%);
+  transition: all 0.3s ease;
+}
+
+.team-member:hover img {
+  filter: grayscale(0%);
+}
+
+/* Separador visual entre secciones */
+.team {
+  border-top: 1px solid rgba(74, 144, 226, 0.1);
+}

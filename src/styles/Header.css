@@ -1,0 +1,206 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid #e0e6ed;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2c3e50 0%, #4a90e2 50%, #2c3e50 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 85px;
+}
+
+.flex {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.center-v {
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  letter-spacing: -0.3px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  color: #34495e;
+  transform: translateY(-1px);
+}
+
+.nav-menu ul {
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.nav-menu a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: block;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #4a90e2;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-menu a:hover {
+  color: #4a90e2;
+  background: rgba(74, 144, 226, 0.05);
+}
+
+.nav-menu a:hover::after {
+  width: 60%;
+}
+
+.mobile-menu-btn {
+  background: #2c3e50;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 300;
+}
+
+.mobile-menu-btn:hover {
+  background: #34495e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.2);
+}
+
+.mobile-menu-btn:active {
+  transform: translateY(0);
+}
+
+/* Efecto sutil de elevación en scroll */
+.header.scrolled {
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+    height: 75px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+    height: 70px;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  .mobile-menu-btn {
+    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Animación de entrada suave */
+.header {
+  animation: fadeInDown 0.6s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estados focus para accesibilidad */
+.nav-menu a:focus,
+.mobile-menu-btn:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+  background: rgba(74, 144, 226, 0.1);
+}
+
+/* Hover sutil para todo el header */
+.header:hover::after {
+  background: linear-gradient(90deg, #34495e 0%, #5dade2 50%, #34495e 100%);
+}
+
+/* Tipografía profesional adicional */
+.logo {
+  text-shadow: none;
+}
+
+.nav-menu a {
+  font-feature-settings: "kern" 1, "liga" 1;
+}
