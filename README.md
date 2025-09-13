@@ -37,60 +37,10 @@ Esta es una **landing page profesional** desarrollada en **React**, diseñada es
 
 ---
 
-## Estructura del Proyecto
-
-```plaintext
-landing-page/
-├─ public/
-│  └─ index.html
-├─ src/
-│  ├─ components/
-│  │  ├─ Header.jsx
-│  │  ├─ Hero.jsx
-│  │  ├─ Services.jsx
-│  │  ├─ ContactForm.jsx
-│  │  └─ Footer.jsx
-│  ├─ assets/
-│  │  ├─ logo.png
-│  │  └─ screenshots/
-│  └─ App.jsx
-├─ package.json
-└─ README.md
-````
-
----
-
-## Uso
-
-1. Clonar el repositorio:
-
-```bash
-git clone https://github.com/tuusuario/landing-page.git
-```
-
-2. Instalar dependencias:
-
-```bash
-npm install
-```
-
-3. Ejecutar el proyecto en modo desarrollo:
-
-```bash
-npm start
-```
-
-4. El formulario de contacto ya viene configurado con **EmailJS**, solo necesitas reemplazar tu `serviceID`, `templateID` y `userID` en el componente `ContactForm.jsx`.
-
----
-
 ## Capturas y Ejemplos
 
 **Screenshot de la página principal:**
-![Screenshot Placeholder](ruta/a/screenshot.png)
-
-**Logo de la empresa:**
-![Logo Placeholder](ruta/a/logo.png)
+![Screenshot Placeholder](./public/assets/image.png)
 
 ---
 
