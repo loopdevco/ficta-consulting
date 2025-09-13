@@ -1,4 +1,3 @@
-````markdown
 # Landing Page Profesional - Proyecto React
 
 ![Logo Placeholder](ruta/a/tu/logo.png)
